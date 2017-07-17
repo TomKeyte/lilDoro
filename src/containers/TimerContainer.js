@@ -2,6 +2,10 @@ import React, {Component} from 'react'
 
 import Timer from '../components/timer'
 
+import tomato from '../images/tomato.png'
+import ring from '../sound/ring.mp3'
+import tick from '../sound/tick.mp3'
+
 
 export default class TimerContainer extends Component {
 
@@ -98,7 +102,7 @@ export default class TimerContainer extends Component {
     }
 
     playSound() {
-        let audio = new Audio('../../sound/ring.mp3')
+        let audio = new Audio(ring)
         audio.volume = this.state.volume / 100
         audio.play()
         setTimeout(()=> audio.pause(), 4000)
@@ -108,21 +112,21 @@ export default class TimerContainer extends Component {
         switch (this.state.format) {
             case 'Pomodoro':
                 new Notification("Relax :)", {
-                icon: "../../images/tomato.png",
+                icon: tomato,
                 lang: "en",
                 body: "Get up, have a break."
                 })
                 break
             case 'Break':
                 new Notification("Back to work", {
-                icon: "../../images/tomato.png",
+                icon: tomato,
                 lang: "en",
                 body: "Break over, time to work again"
                 })
                 break
             default:
                 new Notification("Timer finished", {
-                    icon: "../../images/tomato.png",
+                    icon: tomato,
                     lang: "en",
                     body: "Time up, buddy!"
                 })

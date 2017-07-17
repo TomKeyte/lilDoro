@@ -4,6 +4,8 @@ import NumberLine from './NumberLine'
 import InlineTimeEdit from './InlineTimeEdit'
 import Checkbox from './checkbox'
 
+import StateList from './stateList'
+
 const Timer = (props) => {
     const {time, start} = props
 
@@ -17,24 +19,17 @@ const Timer = (props) => {
                     >{t.name}</li>
         })
     }
-
-    let stateList = []
-    for (let p in props) {
-        stateList.push(
-            <li key={p}>{p} : {typeof props[p] !== 'function' && props[p].toString()}</li>
-        )
-    }
     return (
         <div>
-            <ul className='state'>
-                {stateList}
-            </ul>
+            <StateList {...props} />
 
             <h1><em>lil</em>'Doro Timer</h1>
             <div className='timer'>
                 <div className='time'>
-                    {props.editing ? <InlineTimeEdit _handleBlur={props._onInlineTimeChange}/>
-                    : <NumberLine start={start} current={time} />}
+                    {props.editing ?
+                        <InlineTimeEdit _handleBlur={props._onInlineTimeChange}/>
+                        :<NumberLine start={start} current={time} />
+                    }
                 </div>
                 <div className="buttons">
                     <button onClick={props._handlePlay}>

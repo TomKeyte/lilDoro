@@ -3,8 +3,8 @@ import GithubCorner from 'react-github-corner'
 
 import '../styles/App.css'
 
-
 import TimerContainer from './TimerContainer'
+import Footer from '../components/footer'
 
 const App = (props) => {
     return (
@@ -14,10 +14,6 @@ const App = (props) => {
             <Footer />
         </div>
     );
-}
-
-const Footer = (props) => {
-    return <footer>Created by <a href='http://www.tomkeyte.com' target='_blank' rel='noopener noreferrer'>Tom Keyte</a></footer>
 }
 
 export default App

@@ -12,7 +12,6 @@ body {
   color: #fff;
 }
 
-
 #root {
   min-height: 100vh;
   display: flex;
@@ -49,8 +48,6 @@ h1 em {
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  
-  
 }
 
 ul {
@@ -117,19 +114,6 @@ ul {
   top:50%;
   transform: translateX(100%) translateY(-50%);
   right: 0;
-}
-
-.state {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  list-style-type: initial;
-  display: block;
-}
-
-.state li {
-  margin-bottom: 10px;
-  display: block;
 }
 
 footer {

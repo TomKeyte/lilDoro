@@ -1,4 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const List = styled.ul`
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    list-style-type: initial;
+    display: block;
+
+    li {
+        margin-bottom: 10px;
+        display: block;
+    }
+`
 
 
 const StateList = (props) => {

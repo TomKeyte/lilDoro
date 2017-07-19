@@ -1,8 +1,11 @@
 {
-  "main.css": "static/css/main.49e66358.css",
-  "main.css.map": "static/css/main.49e66358.css.map",
-  "main.js": "static/js/main.98b0b91d.js",
-  "main.js.map": "static/js/main.98b0b91d.js.map",
+  "main.css": "static/css/main.6208e61b.css",
+  "main.css.map": "static/css/main.6208e61b.css.map",
+  "main.js": "static/js/main.21966f2f.js",
+  "main.js.map": "static/js/main.21966f2f.js.map",
+  "static\\media\\pause.svg": "static/media/pause.47ebf4f4.svg",
+  "static\\media\\play.svg": "static/media/play.cdfb37c4.svg",
+  "static\\media\\restart.svg": "static/media/restart.85dd37c2.svg",
   "static\\media\\ring.mp3": "static/media/ring.5d830418.mp3",
   "static\\media\\tick.mp3": "static/media/tick.b685cef5.mp3",
   "static\\media\\tomato.png": "static/media/tomato.549fd71e.png"

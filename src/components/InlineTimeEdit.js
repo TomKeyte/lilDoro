@@ -9,47 +9,7 @@ export default class InlineTimeEdit extends React.Component {
             s: '00',
             error: ''
         }
-
-        this.validateMinutes = this.validateMinutes.bind(this)
-        this.validateSeconds = this.validateSeconds.bind(this)
         this._handleChange   = this._handleChange.bind(this);
-    }
-
-    validateMinutes(e) {
-        let val = e.target.value
-        if (!isNaN(parseInt(val, 10)) && typeof parseInt(val, 10) === 'number') {
-            this.setState({
-                error: '',
-                m: val
-            })
-        } else if(val === '') {
-            this.setState({
-                error: '',
-                m: val
-            })
-        } else {
-            this.setState({
-                error: 'Please enter a valid number of minutes',
-                m: '00'
-            })
-            e.stopPropagation()
-        }
-    }
-
-    validateSeconds(e) {
-        let val = e.target.value
-        if (!isNaN(parseInt(val, 10)) && typeof parseInt(val, 10) === 'number' && val < 60 && val > 0) {
-            this.setState({
-                error: '',
-                s: val
-            })
-        } else {
-            this.setState({
-                error: 'Please enter a valid number of seconds',
-                s: '00'
-            })
-            e.stopPropagation()
-        }
     }
 
     _handleChange(e) {

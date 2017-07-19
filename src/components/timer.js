@@ -1,10 +1,46 @@
 import React from 'react'
-
+import styled from 'styled-components'
 import NumberLine from './NumberLine'
 import InlineTimeEdit from './InlineTimeEdit'
 import Checkbox from './checkbox'
-
 import StateList from './stateList'
+
+import playIcon from '../images/play.svg'
+import pauseIcon from '../images/pause.svg'
+import restartIcon from '../images/restart.svg'
+
+import Volume from './volume';
+
+const Button = styled.span`
+    min-width: 60px;
+    height: 60px;
+    background: royalblue;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    
+
+    &:first-of-type {
+        margin-right: 30px;
+    }
+
+    span {
+        display: block;
+        background-image: url(${props => props.icon && props.icon});
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+
+
+        &:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+    }
+`
 
 const Timer = (props) => {
     const {time, start} = props
@@ -19,6 +55,7 @@ const Timer = (props) => {
                     >{t.name}</li>
         })
     }
+
     return (
         <div>
             <StateList {...props} />
@@ -32,20 +69,12 @@ const Timer = (props) => {
                     }
                 </div>
                 <div className="buttons">
-                    <button onClick={props._handlePlay}>
-                        {!props.play ? 'Play' : '||'}
-                    </button>
-                    <button onClick={props._handleReset}>Reset</button>
+                    <Button onClick={props._handlePlay} icon={!props.play ? playIcon : pauseIcon}><span/></Button>
+                    <Button onClick={props._handleReset} icon={restartIcon}><span /></Button>
                 </div>
 
             </div>
-            <div>
-                <label>Volume: </label>
-            <input type='range'
-                min='0' max='100' step="10"
-                value={props.volume} onChange={props._setVolume} disabled={!props.sound} />
-
-            </div>
+            <Volume _setVolume={props._setVolume} disabled={!props.sound} value={props.volume}/>
 
             <ul>{renderLabels()}</ul>
 

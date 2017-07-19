@@ -27,9 +27,9 @@ const StateList = (props) => {
 
     return (
         window.location.hostname === 'localhost' ?
-        <ul className='state'>
+        <List>
             {list}
-        </ul>
+        </List>
         :
         null
     )

@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import '../styles/App.css'
 
 import TimerContainer from '../containers/timerContainer'
-import Pomodoro from './pomodoro'
 import Footer from './footer'
 
 const Wrapper = styled.div`
@@ -38,7 +37,6 @@ const App = props => {
 				<em>lil</em>'Doro Timer
 			</h1>
 			<Flex>
-				{/* <Pomodoro /> */}
 				<TimerContainer />
 			</Flex>
 			<Footer />
